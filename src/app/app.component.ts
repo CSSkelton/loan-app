@@ -1,3 +1,10 @@
+/**
+ * title: app.component.ts
+ * author: Cody Skelton
+ * date created: 05.12.2024
+ * Code sourced from WEB 425 capstone assignment requirements
+ */
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +13,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'loan-app';
+  assignment = 'Loan Calculator App';
+  title = 'loan-app'
 }

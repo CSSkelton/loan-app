@@ -1,0 +1,138 @@
+/**
+ * title: app-routing.module.ts
+ * author: Cody Skelton
+ * date created: 05.12.2024
+ * Code sourced from WEB 425 capstone assignment requirements
+ * Pallettes done at mcg.mbitson.com
+*/
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Nested scss map for themes
+
+$dark-primary-map: (
+    50 : #e2e4e8,
+    100 : #b7bac6,
+    200 : #878da0,
+    300 : #565f79,
+    400 : #323c5d,
+    500 : #0e1a40,
+    600 : #0c173a,
+    700 : #0a1332,
+    800 : #080f2a,
+    900 : #04081c,
+    A100 : #5a6fff,
+    A200 : #2742ff,
+    A400 : #001ef3,
+    A700 : #001bda,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$dark-accent-map: (
+    50 : #f2ede6,
+    100 : #dfd3c0,
+    200 : #cab596,
+    300 : #b4976c,
+    400 : #a4814d,
+    500 : #946b2d,
+    600 : #8c6328,
+    700 : #815822,
+    800 : #774e1c,
+    900 : #653c11,
+    A100 : #ffca9b,
+    A200 : #ffaf68,
+    A400 : #ff9535,
+    A700 : #ff871b,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$dark-warn-map: (
+    50 : #ececec,
+    100 : #cecece,
+    200 : #aeaeae,
+    300 : #8e8e8e,
+    400 : #757575,
+    500 : #5d5d5d,
+    600 : #555555,
+    700 : #4b4b4b,
+    800 : #414141,
+    900 : #303030,
+    A100 : #f39191,
+    A200 : #ee6363,
+    A400 : #ff1f1f,
+    A700 : #ff0505,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$dark-primary-palette: mat-palette($dark-primary-map);
+$dark-accent-palette: mat-palette($dark-accent-map);
+
+// The warn palette is optional (defaults to red).
+$dark-warn-palette: mat-palette($dark-warn-map, 500);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$dark-theme: mat-dark-theme($dark-primary-palette, $dark-accent-palette, $dark-warn-palette);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($dark-theme);
+

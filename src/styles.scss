@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * title: styles.scss
+ * author: Cody Skelton
+ * date created: 05.12.2024
+ * Code sourced from WEB 425 capstone assignment requirements
+ */
+ 
+@import './theme';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.blue {
+  color: #0e1a40;
+}
+
+.gold {
+  color: #946b2d;
+}
+
+.silver {
+  color: #5d5d5d;
+}
+
+.card-title-icon {
+  text-align: center;
+}
+
+.card-title-icon, .mat-icon {
+  font-size: 72px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.page-title {
+  color: #946b2d;
+  font-size: 100px;
+}
