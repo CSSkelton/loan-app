@@ -18,17 +18,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoanCalculatorComponent } from './loan-calculator/loan-calculator.component';
+import { MonthlyPaymentComponent } from './monthly-payment/monthly-payment.component';
+import { InterestPaidComponent } from './interest-paid/interest-paid.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    LoanCalculatorComponent,
+    MonthlyPaymentComponent,
+    InterestPaidComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

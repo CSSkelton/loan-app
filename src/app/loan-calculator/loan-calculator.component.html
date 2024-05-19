@@ -1,0 +1,51 @@
+<!--
+  title: loan-calculator.component.html
+  author: Cody Skelton
+  date modified: 05.19.2024
+  Code sourced from WEB 425 capstone assignment requirements
+-->
+
+<div fxLayout="column">
+  <mat-card>
+    <mat-card-title>Loan Calculator</mat-card-title>
+
+    <mat-card-content>
+      <form fxLayout="column" class="loan-calculator-form" [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+
+        <!-- Don't need error handling for input verification of incorrect type if input type is set to number-->
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Principle Amount</mat-label>
+          <input type="number" name="txtPrinciple" matInput formControlName="principle"/>
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Interest Rate (0 - 100)</mat-label>
+          <input type="number" min="0" max="100" name="txtInterest" matInput formControlName="interestRate"/>
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Years</mat-label>
+          <input type="number" name="txtYears" matInput formControlName="years"/>
+        </mat-form-field>
+
+        <!-- Disabling the submit button until all fields are filled bypasses need for this input validation -->
+        <button mat-button color="accent" [disabled]="!loanForm.valid">Calculate</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Monthly Payments</mat-card-title>
+    <mat-card-content>
+      <app-monthly-payment [monthlyPayment]="monthlyPayment"></app-monthly-payment>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Interest Paid</mat-card-title>
+    <mat-card-content>
+      <app-interest-paid [interestPaid]="interestPaid"></app-interest-paid>
+    </mat-card-content>
+  </mat-card>
+</div>
+
